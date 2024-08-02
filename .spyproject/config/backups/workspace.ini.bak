@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['Stage2.py', '..\\same_czujniki.py', 'test.py', '..\\..\\..\\..\\..\\AppData\\Roaming\\Python\\Python311\\site-packages\\skfuzzy\\control\\controlsystem.py', 'Stage3.py']
+recent_files = ['Stage2.py', '..\\same_czujniki.py', 'Stage3.py', 'test.py', 'Stage1.py', '..\\..\\..\\..\\..\\..\\..\\ProgramData\\anaconda3\\Lib\\site-packages\\jedi\\third_party\\typeshed\\stdlib\\3\\builtins.pyi']
 
 [main]
 version = 0.2.0

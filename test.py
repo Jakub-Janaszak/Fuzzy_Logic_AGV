@@ -114,7 +114,6 @@ class MotorSensorController:
             self.speed_L = speedL
             self.speed_R = speedR
             
-            
 
     def run(self, iterations):
         while (self.mode != 4):
