@@ -134,7 +134,7 @@ class MotorSensorController:
         self.client.close()
         print("AGV arived!")
         df = pd.DataFrame(self.record, columns=['d1','d2','d3', 'speed_L', 'speed_R'])
-        df.to_excel('80+0_3.xlsx')
+        df.to_excel('110+0_1.xlsx')
 
 if __name__ == "__main__":
     motorsHost = "192.168.0.101"
