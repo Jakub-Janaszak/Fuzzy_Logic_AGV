@@ -36,7 +36,6 @@ class MotorSensorController:
         left_f = 0xFF
         left_b = 0xFF
         right_f = 0xFF
-        
         right_b = 0xFF
 
         if self.speed_L >= 0:
@@ -108,15 +107,18 @@ class MotorSensorController:
             elif self.mode == 3:
                 print("Mode: 3")
                 speedL, speedR = self.stage3.calculateWheelSpeeds(d1, d2, d3)
-                if d3>300 and d3<350:
+                if d3<350:
                     self.mode = 4
+                    self.speed_L = 0
+                    self.speed_L = 0
             
             self.speed_L = speedL
             self.speed_R = speedR
-            
+
 
     def run(self, iterations):
         while (self.mode != 4):
+            time.sleep(0.001)
             self.motorSend()
             self.motorReceiveResponse()
             self.sensorSend()
@@ -128,11 +130,11 @@ class MotorSensorController:
             d2_avg_last5 = sum(self.d2_list[-5:]) / len(self.d2_list[-5:])
             d3_avg_last5 = sum(self.d3_list[-5:]) / len(self.d3_list[-5:])
             self.updateSpeeds(d1,d2,d3)
-            time.sleep(0.001)
+        self.motorSend()
         self.client.close()
         print("AGV arived!")
         df = pd.DataFrame(self.record, columns=['d1','d2','d3', 'speed_L', 'speed_R'])
-        df.to_excel('agv_ride.xlsx')
+        df.to_excel('80+0_3.xlsx')
 
 if __name__ == "__main__":
     motorsHost = "192.168.0.101"
